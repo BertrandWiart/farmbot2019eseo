@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+# coding: utf-8
+
+import socket
+from settings import *
+from time import sleep
+from farmware_tools import device
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+def connect(host,port,retry=1):
+    connected = False
+    try:
+        s.connect((host, port))
+        print("connected !")
+        connected = True
+    except ConnectionRefusedError:
+        print("Connection refused")
+        if retry<5:
+            print("Retrying (try n°{})".format(retry+1))
+            sleep(1)
+            connected = connect(host, port,retry+1)
+            retry+=1
+        else:
+            print("Le serveur distant n'est pas joignable.")
+    finally:return connected
+
+if __name__ == "__main__":
+    run = True
+    connected = connect(IP, PORT)
+
+    print("----"*5)
+
+    if connected:
+        while run:
+            
+            # send a rq_connect command
+            sendMsg(s, 1, PASS)
+                
+            # receive the response
+            run, dataBytes, order, size = receiveMsg(s)
+
+            # display on the web app if connectSuccess is received
+            if (order == 'rsp_connectSuccess'):
+                print("\nAction performed on the web App :")
+                device.log(message='Connected with to the server !', message_type='success')
+            else:
+                print("Received connection failed flag, Good Bye")
+
+            # close the socket
+            print("\nProcess is now done, Good bye !")
+            run = False
+            s.close()
+
+    print("----"*5)
