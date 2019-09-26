@@ -12,24 +12,26 @@ def connect(host,port,retry=1):
     connected = False
     try:
         s.connect((host, port))
-        print("connected !")
+        device.log(message='connected !', message_type='success')
         connected = True
     except ConnectionRefusedError:
-        print("Connection refused")
+        device.log(message='connection refused !', message_type='success')
+        #print("Connection refused")
         if retry<5:
-            print("Retrying (try n°{})".format(retry+1))
+            #print("Retrying (try n°{})".format(retry+1))
             sleep(1)
             connected = connect(host, port,retry+1)
             retry+=1
         else:
-            print("Le serveur distant n'est pas joignable.")
+            #print("Le serveur distant n'est pas joignable.")
+        device.log(message='server non joignable !', message_type='success')
     finally:return connected
 
 if __name__ == "__main__":
     run = True
     connected = connect(IP, PORT)
 
-    print("----"*5)
+    #print("----"*5)
 
     if connected:
         while run:
@@ -42,14 +44,14 @@ if __name__ == "__main__":
 
             # display on the web app if connectSuccess is received
             if (order == 'rsp_connectSuccess'):
-                print("\nAction performed on the web App :")
+                #print("\nAction performed on the web App :")
                 device.log(message='Connected with to the server !', message_type='success')
             else:
-                print("Received connection failed flag, Good Bye")
+                #print("Received connection failed flag, Good Bye")
 
             # close the socket
-            print("\nProcess is now done, Good bye !")
+            #print("\nProcess is now done, Good bye !")
             run = False
             s.close()
 
-    print("----"*5)
+    #print("----"*5)
