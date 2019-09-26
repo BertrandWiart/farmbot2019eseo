@@ -3,10 +3,11 @@
  "language": "python",
  "author": "FarmBotESEO2019",
  "description": "A simple Farmware example that connects through TCP/IP protocol to a local server and prints Hello World in Web App.",
- "version": "1.0.0",
- "min_os_version_major": 6,
+ "farmware_manifest_version": "2.0.0",
+ "package_version": "1.0.0",
+ "farmbot_os_version_requirement": ">= 8.0.0",
  "url": "https://raw.githubusercontent.com/BertrandWiart/farmbot2019eseo/master/manifest.json",
  "zip": "https://github.com/BertrandWiart/farmbot2019eseo/archive/master.zip",
  "executable": "python",
- "args": "farmbot2019eseo-master/client.py"
+ "args": ["farmbot2019eseo-master/client.py"]
 }
