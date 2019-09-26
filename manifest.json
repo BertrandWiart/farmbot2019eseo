@@ -1,5 +1,5 @@
 {
- "package": "Hello Farmware",
+ "package": "Hello Server Farmware Python",
  "language": "python",
  "author": "FarmBotESEO2019",
  "description": "A simple Farmware example that connects through TCP/IP protocol to a local server and prints Hello World in Web App.",
