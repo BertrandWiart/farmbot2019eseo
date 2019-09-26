@@ -1,14 +1,14 @@
 {
  "package": "Hello Server",
  "language": "python",
- "author": "FarmBot, Inc.",
- "description": "A simple Farmware example that connects to a server and logs "" in Web App",
+ "author": "FarmBotE",
+ "description": "A simple Farmware example that tells FarmBot to log a new message.",
  "farmware_manifest_version": "2.0.0",
  "package_version": "1.0.0",
  "farmbot_os_version_requirement": ">= 8.0.0",
  "url": "https://raw.githubusercontent.com/BertrandWiart/farmbot2019eseo/master/manifest.json",
  "zip": "https://github.com/BertrandWiart/farmbot2019eseo/archive/master.zip",
  "executable": "python",
- "args": "farmbot2019eseo-master/client.py"
+ "args": "farmbot2019eseo-master/hello.py"
 }
 
