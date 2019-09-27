@@ -9,6 +9,6 @@
  "url": "https://raw.githubusercontent.com/BertrandWiart/farmbot2019eseo/master/manifest.json",
  "zip": "https://github.com/BertrandWiart/farmbot2019eseo/archive/master.zip",
  "executable": "python",
- "args": "farmbot2019eseo-master/hello.py"
+ "args": "farmbot2019eseo-master/client.py"
 }
 
