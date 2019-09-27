@@ -3,7 +3,8 @@
 
 from farmware_tools import device
 device.log(message='import farmwareTools !', message_type='success')
-#from settings import *
+'''
+from settings import *
 device.log(message='settings imported !', message_type='success')
 import socket
 device.log(message='import socket !', message_type='success')
@@ -13,7 +14,7 @@ device.log(message='import time !', message_type='success')
 
 device.log(message='starting Client !', message_type='success')
 
-'''
+
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def connect(host,port,retry=1):
