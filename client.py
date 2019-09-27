@@ -1,7 +1,10 @@
+
 #!/usr/bin/env python
 
+'''Hello Farmware
+A simple Farmware example that tells FarmBot to log a new message.
+'''
 
 from farmware_tools import device
 
-device.log(message='import farmwareTools !', message_type='success')
-
+device.log(message='Hello Farmware!', message_type='success')
