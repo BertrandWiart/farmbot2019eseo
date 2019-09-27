@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-import socket
 from settings import *
+device.log(message='settings imported !', message_type='success')
+import socket
+device.log(message='import socket !', message_type='success')
 from time import sleep
+
+device.log(message='import time !', message_type='success')
 
 device.log(message='starting Client !', message_type='success')
 
