@@ -1,3 +1,4 @@
+'''
 from farmware_tools import device
 
 commands = {
@@ -109,3 +110,4 @@ def receiveMsg(socket, side="client"):
             return False, None, order, size
     
     #print("=======================")
+'''
