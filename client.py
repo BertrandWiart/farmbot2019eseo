@@ -13,6 +13,7 @@ device.log(message='import time !', message_type='success')
 
 device.log(message='starting Client !', message_type='success')
 
+'''
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def connect(host,port,retry=1):
@@ -63,3 +64,4 @@ if __name__ == "__main__":
             s.close()
 
     #print("----"*5)
+'''
