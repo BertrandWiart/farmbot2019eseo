@@ -3,7 +3,7 @@
 
 from farmware_tools import device
 device.log(message='import farmwareTools !', message_type='success')
-from settings import *
+#from settings import *
 device.log(message='settings imported !', message_type='success')
 import socket
 device.log(message='import socket !', message_type='success')
