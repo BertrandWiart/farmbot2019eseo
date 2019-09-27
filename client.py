@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# coding: utf-8
+
 
 from farmware_tools import device
 device.log(message='import farmwareTools !', message_type='success')
