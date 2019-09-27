@@ -6,9 +6,12 @@ from settings import *
 from time import sleep
 from farmware_tools import device
 
+device.log(message='starting Client !', message_type='success')
+
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def connect(host,port,retry=1):
+	device.log(message='before connect', message_type='success')
     connected = False
     try:
         s.connect((host, port))
@@ -24,7 +27,7 @@ def connect(host,port,retry=1):
             retry+=1
         else:
             #print("Le serveur distant n'est pas joignable.")
-        device.log(message='server non joignable !', message_type='success')
+        	device.log(message='server non joignable !', message_type='success')
     finally:return connected
 
 if __name__ == "__main__":
