@@ -1,11 +1,13 @@
+from farmware_tools import device
+
 commands = {
     'rq_connect' : 1,
     'rsp_connectSuccess' : 2,
     'rsp_connectFail' : 3
 }
 
-IP = "localhost"
-#IP = "172.14.1.10"
+#IP = "localhost"
+IP = "172.14.1.23"
 PORT = 36100
 PASS = "farmbot"
 
@@ -64,7 +66,7 @@ def receiveHeader(socket):
 
 def receiveMsg(socket, side="client"):
     #print("==== RECEIVING MSG ====")
-        device.log(message='Settings ReceiveMEssage !', message_type='success')
+    device.log(message='Settings ReceiveMEssage !', message_type='success')
     order, size = receiveHeader(socket)
     if order == None:
         #print("[ERROR] Order = None")

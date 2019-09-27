@@ -4,14 +4,13 @@
 import socket
 from settings import *
 from time import sleep
-from farmware_tools import device
 
 device.log(message='starting Client !', message_type='success')
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def connect(host,port,retry=1):
-	device.log(message='before connect', message_type='success')
+    device.log(message='before connect', message_type='success')
     connected = False
     try:
         s.connect((host, port))
@@ -51,7 +50,7 @@ if __name__ == "__main__":
                 device.log(message='Connected with to the server !', message_type='success')
             else:
                 #print("Received connection failed flag, Good Bye")
-
+                device.log(message='Received connection failed flag ! ', message_type='success')
             # close the socket
             #print("\nProcess is now done, Good bye !")
             run = False
